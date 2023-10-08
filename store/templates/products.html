@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Products</title>
+{% endblock title %}
+
+
+{% block main %}
+    <div class="container">
+        <div class="row alert alert-warning ">
+            <div class="col-md-12">
+                <h1>Products</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4">
+                    <div class="card">
+                        <img class="img-fluid" src="{{product.image.url}}" alt="product.image" style="max-height: 200px; object-fit: cover;">
+                        <div class="p-2">
+                            <H4>{{product.name}}</H4>
+                            <p>{{product.description | slice:":80"}}</p>
+                            <p>${{product.price}}</p>
+                            <div class="cta">
+                                <button class="btn btn-dark">Add to cart</button>
+                                <button class="btn btn-outline-dark">View Product</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock main %}

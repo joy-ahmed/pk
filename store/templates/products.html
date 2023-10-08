@@ -7,9 +7,9 @@
 
 {% block main %}
     <div class="container">
-        <div class="row alert alert-warning ">
+        <div class="row alert alert-success ">
             <div class="col-md-12">
-                <h1>Products</h1>
+                <h1>/All Products</h1>
             </div>
         </div>
         <div class="row">
@@ -22,8 +22,8 @@
                             <p>{{product.description | slice:":80"}}</p>
                             <p>${{product.price}}</p>
                             <div class="cta">
-                                <button id="addToCart" class="btn btn-dark">Add to cart</button>
-                                <button class="btn btn-outline-dark">View Product</button>
+                                <a id="addToCart" class="btn btn-dark">Add to cart</a>
+                                <a href="{% url "product" product.id %}" class="btn btn-outline-dark">View Product</a>
                             </div>
                         </div>
                     </div>

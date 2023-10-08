@@ -22,7 +22,7 @@
                             <p>{{product.description | slice:":80"}}</p>
                             <p>${{product.price}}</p>
                             <div class="cta">
-                                <button class="btn btn-dark">Add to cart</button>
+                                <button id="addToCart" class="btn btn-dark">Add to cart</button>
                                 <button class="btn btn-outline-dark">View Product</button>
                             </div>
                         </div>
@@ -33,3 +33,13 @@
         </div>
     </div>
 {% endblock main %}
+
+
+{% block js %}
+    <script>
+        const addToCart = document.getElementById('addToCart');
+        addToCart.addEventListener('click', function () {
+            console.log('addToCart clicked');
+        })
+    </script>
+{% endblock js %}
